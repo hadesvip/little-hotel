@@ -24,20 +24,30 @@
     </dependency>
 
     <dependency>
-      <groupId>com.alibaba.cloud</groupId>
-      <artifactId>spring-cloud-starter-dubbo</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>com.alibaba.cloud</groupId>
-      <artifactId>spring-cloud-alibaba-nacos-discovery</artifactId>
-      <exclusions>
-        <exclusion>
-          <groupId>org.springframework.cloud</groupId>
-          <artifactId>spring-cloud-context</artifactId>
-        </exclusion>
-      </exclusions>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.alibaba.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-dubbo</artifactId>-->
+<!--    </dependency>-->
+
+<!--    <dependency>-->
+<!--      <groupId>com.alibaba.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-alibaba-nacos-discovery</artifactId>-->
+<!--      <exclusions>-->
+<!--        <exclusion>-->
+<!--          <groupId>org.springframework.cloud</groupId>-->
+<!--          <artifactId>spring-cloud-context</artifactId>-->
+<!--        </exclusion>-->
+<!--      </exclusions>-->
+<!--    </dependency>-->
+
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.cloud</groupId>-->
+<!--      <artifactId>spring-cloud-starter-config</artifactId>-->
+<!--    </dependency>-->
   </dependencies>
 
   <build>
