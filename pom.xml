@@ -16,12 +16,25 @@
   <description>酒店项目</description>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <springboot.version>2.2.5.RELEASE</springboot.version>
     <springcloud.alibaba.version>2.1.1.RELEASE</springcloud.alibaba.version>
     <springcloud.version>Hoxton.SR3</springcloud.version>
+
   </properties>
 
+  <!--私服地址-->
   <repositories>
+    <repository>
+      <id>aliyun</id>
+      <name>aliyun</name>
+      <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+      <snapshots>
+        <updatePolicy>always</updatePolicy>
+      </snapshots>
+    </repository>
+
     <repository>
       <id>public</id>
       <name>public</name>
