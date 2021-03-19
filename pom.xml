@@ -38,9 +38,28 @@
     <dependencies>
       <dependency>
         <groupId>com.ruyuan2020.little.project</groupId>
+        <artifactId>little-project-mysql-api</artifactId>
+        <version>1.0.2-RELEASE</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.ruyuan2020.little.project</groupId>
+        <artifactId>little-project-redis-api</artifactId>
+        <version>1.0.1-RELEASE</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.ruyuan2020.little.project</groupId>
+        <artifactId>little-project-message-api</artifactId>
+        <version>1.0.0-RELEASE</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.ruyuan2020.little.project</groupId>
         <artifactId>little-project-common</artifactId>
         <version>1.0.0-RELEASE</version>
       </dependency>
+
 
       <dependency>
         <groupId>org.apache.rocketmq</groupId>
