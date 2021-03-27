@@ -57,12 +57,20 @@ public class LoginServiceImpl implements LoginService {
 
   @Override
   public void firstLoginDistributeCoupon(LoginRequestDTO loginRequestDTO) {
-    logger.info("");
+    if (!isFirstLogin(loginRequestDTO)) {
+      // 不是第一次登陆 返回
+      logger.info("userId:{} not first login", loginRequestDTO.getUserId());
+      return;
+    }
+    // 更新第一次登陆的标识位
+    this.updateFirstLoginStatus(loginRequestDTO.getPhoneNumber(), YesOrNoEnum.NO.getCode());
+    // 发送第一次登陆成功的消息
+    this.sendFirstLoginMessage(loginRequestDTO);
   }
 
   @Override
-  public void resetFirstLoginStatus(LoginRequestDTO loginRequestDTO) {
-    this.updateFirstLoginStatus(loginRequestDTO.getPhoneNumber(), YesOrNoEnum.YES.getCode());
+  public void resetFirstLoginStatus(String phoneNumber) {
+    this.updateFirstLoginStatus(phoneNumber, YesOrNoEnum.YES.getCode());
   }
 
 
@@ -124,7 +132,7 @@ public class LoginServiceImpl implements LoginService {
       logger.info("end send login success notify message, sendResult:{}",
           JSON.toJSONString(sendResult));
     } catch (Exception e) {
-      logger.error("send login success notify message fail, error message:{}", e);
+      logger.error("send login success notify message fail:", e);
     }
   }
 

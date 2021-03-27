@@ -18,6 +18,6 @@ public interface LoginService {
   /**
    * 重置用户状态
    */
-  void resetFirstLoginStatus(LoginRequestDTO loginRequestDTO);
+  void resetFirstLoginStatus(String phoneNumber);
 
 }
