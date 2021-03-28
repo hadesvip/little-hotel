@@ -45,7 +45,7 @@ public class LoginController {
   }
 
   /**
-   * 重置登录状态 TODO 方便测试使用
+   * 重置登录状态(测试使用)
    *
    * @param phoneNumber 用户手机号
    * @return 结果
