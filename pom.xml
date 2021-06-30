@@ -1,110 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.kevin</groupId>
-  <artifactId>little-hotel</artifactId>
-  <version>1.0-SNAPSHOT</version>
-  <modules>
-    <module>little-hotel-web</module>
-  </modules>
-  <name>little-hotel</name>
-  <packaging>pom</packaging>
-  <description>酒店项目</description>
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
-    <springboot.version>2.2.5.RELEASE</springboot.version>
-    <springcloud.alibaba.version>2.1.1.RELEASE</springcloud.alibaba.version>
-    <springcloud.version>Hoxton.SR3</springcloud.version>
+    <groupId>com.kevin</groupId>
+    <artifactId>little-hotel</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>little-hotel-web</module>
+    </modules>
+    <name>little-hotel</name>
+    <packaging>pom</packaging>
+    <description>酒店项目</description>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <springboot.version>2.2.5.RELEASE</springboot.version>
+        <springcloud.alibaba.version>2.1.1.RELEASE</springcloud.alibaba.version>
+        <springcloud.version>Hoxton.SR3</springcloud.version>
 
-  </properties>
+    </properties>
 
-  <!--私服地址-->
-  <repositories>
-    <repository>
-      <id>aliyun</id>
-      <name>aliyun</name>
-      <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
+    <!--私服地址-->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/nexus/content/groups/public/</url>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
 
-    <repository>
-      <id>public</id>
-      <name>public</name>
-      <url>http://121.4.45.211:8081/repository/maven-public/</url>
-      <snapshots>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
+        <repository>
+            <id>public</id>
+            <name>public</name>
+            <url>http://121.4.45.211:8081/repository/maven-public/</url>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
 
-  <dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.ruyuan2020.little.project</groupId>
+                <artifactId>little-project-mysql-api</artifactId>
+                <version>1.0.2-RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ruyuan2020.little.project</groupId>
+                <artifactId>little-project-redis-api</artifactId>
+                <version>1.0.1-RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ruyuan2020.little.project</groupId>
+                <artifactId>little-project-message-api</artifactId>
+                <version>1.0.0-RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.ruyuan2020.little.project</groupId>
+                <artifactId>little-project-common</artifactId>
+                <version>1.0.0-RELEASE</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>4.7.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${springcloud.alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
     <dependencies>
-      <dependency>
-        <groupId>com.ruyuan2020.little.project</groupId>
-        <artifactId>little-project-mysql-api</artifactId>
-        <version>1.0.2-RELEASE</version>
-      </dependency>
 
-      <dependency>
-        <groupId>com.ruyuan2020.little.project</groupId>
-        <artifactId>little-project-redis-api</artifactId>
-        <version>1.0.1-RELEASE</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.ruyuan2020.little.project</groupId>
-        <artifactId>little-project-message-api</artifactId>
-        <version>1.0.0-RELEASE</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.ruyuan2020.little.project</groupId>
-        <artifactId>little-project-common</artifactId>
-        <version>1.0.0-RELEASE</version>
-      </dependency>
-
-
-      <dependency>
-        <groupId>org.apache.rocketmq</groupId>
-        <artifactId>rocketmq-client</artifactId>
-        <version>4.7.0</version>
-      </dependency>
-
-      <dependency>
-        <groupId>com.alibaba.cloud</groupId>
-        <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-        <version>${springcloud.alibaba.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-dependencies</artifactId>
-        <version>${springboot.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-
-      <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-dependencies</artifactId>
-        <version>${springcloud.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
+        <dependency>
+            <groupId>org.jacoco</groupId>
+            <artifactId>org.jacoco.agent</artifactId>
+            <version>0.8.5</version>
+            <classifier>runtime</classifier>
+            <scope>test</scope>
+        </dependency>
 
     </dependencies>
 
-  </dependencyManagement>
 
+    <build>
+        <!-- 注意：此处要放在plugins下面，不要放到pluginManagements中 -->
+        <plugins>
+            <!-- Jacoco插件，Offline Instrumentation -->
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.5</version>
+                <executions>
+                    <execution>
+                        <id>jacoco-instrument</id>
+                        <goals>
+                            <goal>instrument</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-restore-instrumented-classes</id>
+                        <goals>
+                            <goal>restore-instrumented-classes</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.0.0-M3</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <!-- 指定jacoco文件生成地址(必须) -->
+                        <jacoco-agent.destfile>${project.build.directory}/jacoco.exec</jacoco-agent.destfile>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
